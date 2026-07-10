@@ -232,6 +232,10 @@ footer {
     .project-card {
         padding: 20px;
     }
+
+    .hero-actions{
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 768px) {
