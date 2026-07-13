@@ -222,7 +222,7 @@ footer {
     background-color: var(--primary-dark);
 }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
 
     *:not(.hero-image),
     *::before,
@@ -236,7 +236,7 @@ footer {
     .hero-image {
         animation: none !important;
     }
-} */
+}
 
 
 
