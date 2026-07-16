@@ -109,6 +109,7 @@ p {
     margin-top: 24px;
 }
 
+
 .btn {
     display: inline-block;
     padding: 12px 20px;
@@ -121,7 +122,8 @@ p {
         color 0.2s var(--ease-soft);
 }
 
-.primary-btn {
+.primary-btn
+ {
     background-color: var(--primary);
     color: white;
 }
@@ -208,7 +210,8 @@ footer {
     margin-top: 24px;
 }
 
-.skill-badge {
+.skill-badge,
+.filter-btn {
     background-color: var(--surface);
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -391,11 +394,12 @@ footer {
 
 .contact-form {
     background-color: var(--surface);
+    color: var(--text);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 24px;
-    max-width: 680px;
+    /* max-width: px; */
     transition: border-color 0.2s ease;
 }
 
@@ -413,6 +417,18 @@ label {
     color: var(--text);
     font-weight: 700;
 }
+
+/* .form-message {
+    display: inline-block;
+    margin-top: 16px;
+    min-height: 24px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background-color: var(--surface);
+    color: var(--text);
+    font-weight: 700;
+} */
 
 input,
 textarea {
@@ -461,12 +477,14 @@ textarea:focus {
 a,
 button,
 .btn,
-.project-card {
+.project-card,
+.filter-btn {
     transition: 0.2s ease;
 }
 
 a:focus,
 button:focus,
+.filter-btn:focus-visible,
 input:focus,
 textarea:focus {
     outline: 3px solid rgba(37, 99, 235, 0.25);
@@ -499,6 +517,7 @@ textarea:focus {
 .footer-links a,
 .project-card,
 .skill-badge,
+.filter-btn,
 input,
 textarea {
     transition: color 0.2s ease,
@@ -697,18 +716,30 @@ textarea {
         border-color 0.25s var(--ease-out);
 }
 
-.skill-badge {
+.skill-badge,
+.filter-btn {
     transition: transform 0.2s var(--ease-out),
         background-color 0.2s ease,
         color 0.2s ease;
 }
 
-.skill-badge:hover {
+.skill-badge:hover,
+.filter-btn:hover,
+.filter-btn.active {
     transform: translateY(-3px);
     background-color: var(--primary);
     color: white;
+    border-color: var(--primary);
 }
 
+.filter-btn {
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+.filter-btn.active{
+    background-color: var(--primary);
+    color: white;
+}
 input,
 textarea {
     transition: border-color 0.2s ease,
@@ -773,7 +804,8 @@ textarea:focus {
     animation-delay: 0.85s;
 }
 
-.skill-badge {
+.skill-badge,
+.filter-btn {
     animation: scaleIn 0.4s var(--ease-out) both;
 }
 
@@ -825,6 +857,22 @@ textarea:focus {
     animation-delay: 0.6s;
 }
 
+.filter-btn {
+    animation: scaleIn 0.4s var(--ease-out) both;
+}
+.filter-btn:nth-child(1){
+    animation-delay: 0.15s;
+}
+.filter-btn:nth-child(2){
+    animation-delay: 0.3s;
+}
+.filter-btn:nth-child(3){
+    animation-delay: 0.45s;
+}
+.filter-btn:nth-child(4){
+    animation-delay: 0.6s;
+}
+
 /* .flip-card {
     width: 280px;
     height: 220px;
@@ -862,4 +910,62 @@ textarea:focus {
     .hero-image {
         animation: none !important;
     }
+}
+
+.dark-theme {
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --border: #334155;
+  --soft-blue: #1e293b;
+  --contact-text: #000000;
+}
+
+.dark-theme .contact-form,
+.dark-theme .contact-form input,
+.dark-theme .contact-form textarea,
+.dark-theme .contact-form {
+  color: var(--contact-text);
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+}
+
+.form-message,
+.form-message1,
+.form-message2,
+.form-message3{
+    color: red;
+    margin-top: 10px;
+}
+
+.form-message{
+    color: green;
 }
