@@ -11,9 +11,6 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-const heroHeading = document.querySelector("h1");
-console.log(heroHeading);
-
 initThemeToggle();
 initMobileMenu();
 initContactForm();
